@@ -10,7 +10,7 @@ function App() {
     <LoadingContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/github_users" element={<Login />} />
           <Route path="/users/:userName" element={<User />} />
           <Route path="/repos/:userName/:reposName" element={<Repos />} />
         </Routes>
