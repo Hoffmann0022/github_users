@@ -12,7 +12,7 @@ export function Login() {
     const searchUser = async () => {
         try {
             user && await getUser(user);
-            user !== '' ? navigate(`${import.meta.env.BASE_URL}/users/${user}`) :
+            user !== '' ? navigate(`users/${user}`) :
                 navigate(`/`)
         } catch (err) {
             setError(true)

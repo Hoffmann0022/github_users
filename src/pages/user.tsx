@@ -122,7 +122,7 @@ export function User() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
                             {visibleRepos && visibleRepos.map((r) => {
                                 return (
-                                    <Card onClick={() => navigate(`${import.meta.env.BASE_URL}/repos/${userName}/${r.name}`)} id={r.id} name={r.name} description={r.description} svn_url={r.svn_url} />
+                                    <Card onClick={() => navigate(`/repos/${userName}/${r.name}`)} id={r.id} name={r.name} description={r.description} svn_url={r.svn_url} />
                                 )
                             })}
                         </div>
