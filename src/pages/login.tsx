@@ -23,14 +23,14 @@ export function Login() {
         <main className="flex-col sm:flex-row sm:justify-between h-screen flex justify-start items-center">
             <section className="h-28 sm:h-full sm:w-2/5 md:w-1/2 lg:w-3/5 w-full  bg-[#05478A] flex justify-center items-center">
 
-                <img className="w-50 md:w-60" src="../../public/img/logo_home.png" alt="" />
+                <img className="w-50 md:w-60" src="./img/logo_home.png" alt="" />
 
             </section>
 
             <section className="sm:w-3/5 md:w-1/2 lg:w-2/5 h-screen bg-gray-100 flex flex-col justify-center items-center">
                 {error && (
                     <div>
-                        <img className="mb-4" src="../../public/img/error.png" alt="" />
+                        <img className="mb-4" src="./img/error.png" alt="" />
                     </div>
                 )}
                 <div className="w-full flex flex-col justify-center items-center">
