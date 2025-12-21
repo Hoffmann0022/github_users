@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/github_users" element={<Login />} />
-          <Route path="/users/:userName" element={<User />} />
-          <Route path="/repos/:userName/:reposName" element={<Repos />} />
+          <Route path="/github_users/users/:userName" element={<User />} />
+          <Route path="/github_users/repos/:userName/:reposName" element={<Repos />} />
         </Routes>
       </BrowserRouter>
     </LoadingContextProvider>
