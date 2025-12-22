@@ -13,7 +13,7 @@ export function Login() {
         try {
             user && await getUser(user);
             user !== '' ? navigate(`users/${user}`) :
-                navigate(`/`)
+            navigate(`/`)
         } catch (err) {
             setError(true)
         }
