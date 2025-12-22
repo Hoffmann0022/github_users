@@ -25,11 +25,11 @@ export function User() {
     const [current, setCurrent] = useState(0)
     const navigate = useNavigate()
     const size = window.innerWidth;
-    
-    const limitRepos = () =>{
-        if (size > 1200){
+
+    const limitRepos = () => {
+        if (size > 1200) {
             setLimit(3)
-        } else if(size > 900){
+        } else if (size > 900) {
             setLimit(2)
         } else {
             setLimit(1)
@@ -44,11 +44,9 @@ export function User() {
         setLoading(true)
         const response = userName && await getUser(userName)
         setUser(response && response.data)
-        setLoading(false)
     }
 
     const getReposData = async () => {
-        setLoading(true)
         const response = userName && await getRepos(userName)
         setRepos(response && response.data)
         setLoading(false)
@@ -75,14 +73,15 @@ export function User() {
     }, [userName])
 
     return (
-        <main className="pb-1 min-h-screen pt-20 flex flex-col bg-gray-100">
+        <main className="pb-1 min-h-screen pt-20 flex flex-col justify-center  bg-gray-100">
             <Header />
             {isLoading ? (
                 <div className="w-full h-full flex flex-col justify-center items-center">
                     <Loading />
                 </div>
             ) : (
-                <section className="mx-3 my-3 px-5 py-5 sm:mx-10 sm:my-10 sm:px-10 sm:py-10 rounded-3xl bg-white shadow-md">
+                <section className="mx-3 my-3 px-5 py-5 sm:mx-10 sm:my-10 sm:px-10 sm:py-10 h-full rounded-3xl bg-white shadow-md">
+
                     <div>
                         <h1 className="text-2xl sm:text-3xl font-bold mb-6">Informações do perfil</h1>
 
@@ -108,6 +107,7 @@ export function User() {
                         </div>
                     </div>
 
+
                     <div className="mt-10">
                         <div className="mb-7">
                             <h1 className="text-2xl sm:text-3xl font-bold mb-6">Repositórios</h1>
@@ -127,10 +127,9 @@ export function User() {
                             })}
                         </div>
                     </div>
+
                 </section>
             )}
-
-
         </main>
     )
 }

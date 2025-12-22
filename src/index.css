@@ -7,3 +7,15 @@
   background-color: #f3f4f6;
 }
 
+@theme {
+  --animate-home: home .7s ease-in-out;
+  @keyframes home {
+   0%{
+    width: 0%;
+   },
+   100%{
+    width: 90%;
+   }
+
+  }
+}

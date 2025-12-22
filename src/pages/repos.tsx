@@ -37,7 +37,7 @@ export function Repos() {
             <Header />
 
             <main className="min-h-screen justify-center items-center bg-gray-100 flex flex-col px-5 py-5">
-                <section className="px-5 py-5 w-full lg:max-w-1/2 md:px-10 md:py-10 rounded-2xl bg-white shadow-md">
+                <section className="px-5 py-5 mt-20 w-full lg:max-w-1/2 md:px-10 md:py-10 rounded-2xl bg-white shadow-md">
                     <h1 className="text-2xl font-bold mb-6">Especifições</h1>
 
                     {isLoading ? (
