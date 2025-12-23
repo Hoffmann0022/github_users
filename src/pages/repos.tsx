@@ -6,6 +6,7 @@ import { getReposDetail } from "../services/users.services";
 
 import { Header } from "../components/header";
 import { Loading } from "../components/loading";
+import { Back } from "../components/back";
 
 interface Repository {
     name: string;
@@ -35,16 +36,16 @@ export function Repos() {
     return (
         <>
             <Header />
-
             <main className="min-h-screen justify-center items-center bg-gray-100 flex flex-col px-5 py-5">
-                <section className="px-5 py-5 mt-20 w-full lg:max-w-1/2 md:px-10 md:py-10 rounded-2xl bg-white shadow-md">
-                    <h1 className="text-2xl font-bold mb-6">Especifições</h1>
+                <Back page={`/users/${userName && userName}`} />
 
-                    {isLoading ? (
-                        <div className="w-full h-full flex flex-col justify-center items-center">
-                            <Loading />
-                        </div>
-                    ) : (
+                {isLoading ? (
+                    <div className="w-full h-full flex flex-col justify-center items-center">
+                        <Loading />
+                    </div>
+                ) : (
+                    <section className="px-5 py-5 mt-23 sm:mt-0  w-full lg:max-w-1/2 md:px-10 md:py-10 rounded-2xl bg-white shadow-md">
+                        <h1 className="text-2xl font-bold mb-6">Especifições</h1>
                         <div className="px-3 py-3 md:px-10 md:py-10 rounded-3xl border-2 border-gray-200 bg-white shadow-md">
                             <h2 className="text-lg md:text-5x1 font-bold mb-4">{repos?.name}</h2>
 
@@ -70,8 +71,8 @@ export function Repos() {
                                 <p className="text-[#202E49] overflow-hidden">{repos?.description}</p>
                             </div>
                         </div>
-                    )}
-                </section>
+                    </section>
+                )}
             </main>
         </>
     )

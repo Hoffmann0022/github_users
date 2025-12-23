@@ -9,7 +9,7 @@ export interface Repos{
 
 export function Card({ name, id, description, svn_url, onClick }: Repos){
     return(
-        <div key={id} onClick={onClick} className=" cursor-pointer border-2 rounded-2xl border-gray-200 px-5 py-12 max-w-96 flex flex-col justify-center items-left transition-all hover:scale-110">
+        <div key={id} onClick={onClick} className=" cursor-pointer border-2 rounded-2xl border-gray-200 px-5 py-12 max-w-96 flex flex-col justify-center items-left transition-all sm:hover:scale-110">
             <h2 className="text-2xl font-bold mb-4">{name}</h2>
 
             <hr className="border-t-2 border-t-[#0070E0]"/>

@@ -7,6 +7,7 @@ import { getRepos, getUser } from "../services/users.services";
 import { Card, type Repos } from "../components/card";
 import { Header } from "../components/header";
 import { Loading } from "../components/loading";
+import { Back } from "../components/back";
 
 interface User {
     avatar_url: string;
@@ -75,12 +76,13 @@ export function User() {
     return (
         <main className="pb-1 min-h-screen pt-20 flex flex-col justify-center  bg-gray-100">
             <Header />
+            <Back page={'/'}/>
             {isLoading ? (
                 <div className="w-full h-full flex flex-col justify-center items-center">
                     <Loading />
                 </div>
             ) : (
-                <section className="mx-3 my-3 px-5 py-5 sm:mx-10 sm:my-10 sm:px-10 sm:py-10 h-full rounded-3xl bg-white shadow-md">
+                <section className="mx-3 my-10 px-5 py-5 sm:mx-10 sm:my-10 sm:px-10 sm:py-10 h-full rounded-3xl bg-white shadow-md">
 
                     <div>
                         <h1 className="text-2xl sm:text-3xl font-bold mb-6">Informações do perfil</h1>
@@ -119,7 +121,7 @@ export function User() {
                                 </div>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1500px] w-full">
                             {visibleRepos && visibleRepos.map((r) => {
                                 return (
                                     <Card onClick={() => navigate(`/repos/${userName}/${r.name}`)} id={r.id} name={r.name} description={r.description} svn_url={r.svn_url} />
